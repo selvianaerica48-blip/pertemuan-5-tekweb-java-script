@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Modern</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4a1025, #a83b58);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: #fff5f6;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #7d203d;
+            margin-bottom: 10px;
+        }
+
+        .deskripsi {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #7d203d;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d9a5b3;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #a83b58;
+        }
+
+        .tombol {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #a83b58;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #7d203d;
+            transform: translateY(-2px);
+        }
+
+        .hasil {
+            background: #f4dce3;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .hasil h3 {
+            color: #7d203d;
+            margin: 0 0 10px;
+        }
+
+        #hasil {
+            font-size: 25px;
+            font-weight: bold;
+            color: #a83b58;
+            overflow-wrap: anywhere;
+        }
+
+        .reset {
+            width: 100%;
+            margin-top: 15px;
+            background: #555;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Kalkulator</h1>
+
+        <p class="deskripsi">
+            Hitung angka dengan mudah dan cepat!
+        </p>
+
+        <label>Angka Pertama</label>
+        <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+
+        <label>Angka Kedua</label>
+        <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+
+        <div class="tombol">
+            <button onclick="hitung('+')">+</button>
+            <button onclick="hitung('-')">−</button>
+            <button onclick="hitung('*')">×</button>
+            <button onclick="hitung('/')">÷</button>
+        </div>
+
+        <div class="hasil">
+            <h3>Hasil Perhitungan</h3>
+            <div id="hasil">0</div>
+        </div>
+
+        <button class="reset" onclick="resetKalkulator()">
+            Reset
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
